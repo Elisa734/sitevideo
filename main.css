@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .video-container {
@@ -10,7 +11,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    z-index: -1; /* Met la vidéo derrière le contenu */
+    z-index: -1; /* Met la vidéo en arrière-plan */
 }
 
 video {
@@ -19,10 +20,27 @@ video {
     object-fit: cover;
 }
 
+/* Contenu au-dessus de la vidéo */
 .content {
     position: relative;
     z-index: 1;
     color: white;
     text-align: center;
-    padding-top: 20vh;
+    padding: 10vh 5vw;
+    font-size: 2rem;
+}
+
+/* Responsive : ajuster le texte sur petits écrans */
+@media (max-width: 768px) {
+    .content {
+        font-size: 1.5rem;
+        padding: 5vh 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        font-size: 1.2rem;
+        padding: 3vh 2vw;
+    }
 }
